@@ -10,6 +10,7 @@ export default function CalculatorResult(props: CalculatorResultProps) {
     >
       <Grid
         item
+        xs={12}
         className='app-text calculator-common-result'
       >
         <Typography variant='body1'>Your RScore is:</Typography>

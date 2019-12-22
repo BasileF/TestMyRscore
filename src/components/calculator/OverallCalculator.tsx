@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Button, Paper, Grid, Fade, Typography } from '@material-ui/core';
 import InputField from '../common/InputField';
 import { BaseCalculatorProps, BaseCalculatorState, CalculatorCourse } from '../../interfaces/CalculatorInterfaces';
@@ -153,9 +153,9 @@ export default class OverallCalculator extends React.Component<BaseCalculatorPro
         <div className='calculator-overall-courses'>
           {
             courses.length === 0 ?
-              <Typography 
+              <Typography
                 className='app-text'
-                variant='body1'  
+                variant='body1'
               >
                 Added courses will appear here!
               </Typography>
@@ -182,104 +182,124 @@ export default class OverallCalculator extends React.Component<BaseCalculatorPro
           direction='row'
           justify='center'
           alignItems='center'
-          spacing={4}
+          spacing={1}
         >
-          <Grid
-            item
-            sm={4}
-            xs={12}
-            className='app-grid-item-no-padding'
-          >
-            <div>
-              <InputField
-                label="Your Grade"
-                name="grade"
-                tooltip="Your course grade (0-100)."
-                value={this.state.grade}
-                onChange={this.handleChange}
-                error={this.state.errors[0]}
+          {
+            this.state.validResult ?
+              <CalculatorResult
+                validResult={this.state.validResult}
+                result={this.state.rscore}
+                onBack={this.onBack}
               />
-
-              <InputField
-                label="Class Average"
-                name="average"
-                tooltip="The class average (0-100)."
-                value={this.state.average}
-                onChange={this.handleChange}
-                error={this.state.errors[1]}
-              />
-
-              <InputField
-                label="Standard Devation"
-                name="deviation"
-                tooltip="The standard deviation of the class. This can be found on your course's grade section on Omnivox."
-                value={this.state.deviation}
-                onChange={this.handleChange}
-                error={this.state.errors[2]}
-              />
-
-              <InputField
-                label="Group Strength"
-                name="strength"
-                tooltip="This is the group strength of your class. It is best to keep it at 75 if unsure."
-                value={this.state.strength}
-                onChange={this.handleChange}
-                error={this.state.errors[3]}
-              />
-
-              <InputField
-                label="Credits"
-                name="credits"
-                tooltip="The amount of credits the course is worth. This can be found on your transcript."
-                value={this.state.credits}
-                onChange={this.handleChange}
-                error={this.state.errors[4]}
-              />
-
-              <Grid item>
-                <Button
-                  variant='contained'
-                  onClick={this.addCourse}
-                  className='app-button'
-                  style={{ marginTop: '8px' }}
-                  fullWidth
+              :
+              <Fragment>
+                <Grid
+                  item
+                  sm={4}
+                  xs={12}
+                  className='app-grid-item-no-padding'
                 >
-                  Add Course
-                </Button>
-              </Grid>
+                  <div>
+                    <InputField
+                      label="Your Grade"
+                      name="grade"
+                      tooltip="Your course grade (0-100)."
+                      value={this.state.grade}
+                      onChange={this.handleChange}
+                      error={this.state.errors[0]}
+                    />
 
-            </div>
-          </Grid>
-          <Grid
-            item
-            sm={8}
-            xs={12}
-            className='app-grid-item-no-padding'
-          >
-            {
-              !this.state.validResult ?
-                this.courses()
-                :
-                <CalculatorResult
-                  validResult={this.state.validResult}
-                  result={this.state.rscore}
-                  onBack={this.onBack}
-                />
-            }
-          </Grid>
+                    <InputField
+                      label="Class Average"
+                      name="average"
+                      tooltip="The class average (0-100)."
+                      value={this.state.average}
+                      onChange={this.handleChange}
+                      error={this.state.errors[1]}
+                    />
+
+                    <InputField
+                      label="Standard Devation"
+                      name="deviation"
+                      tooltip="The standard deviation of the class. This can be found on your course's grade section on Omnivox."
+                      value={this.state.deviation}
+                      onChange={this.handleChange}
+                      error={this.state.errors[2]}
+                    />
+
+                    <InputField
+                      label="Group Strength"
+                      name="strength"
+                      tooltip="This is the group strength of your class. It is best to keep it at 75 if unsure."
+                      value={this.state.strength}
+                      onChange={this.handleChange}
+                      error={this.state.errors[3]}
+                    />
+
+                    <InputField
+                      label="Credits"
+                      name="credits"
+                      tooltip="The amount of credits the course is worth. This can be found on your transcript."
+                      value={this.state.credits}
+                      onChange={this.handleChange}
+                      error={this.state.errors[4]}
+                    />
+                  </div>
+                </Grid>
+                <Grid
+                  item
+                  sm={8}
+                  xs={12}
+                  className='app-grid-item-no-padding'
+                >
+                  {this.courses()}
+                </Grid>
+                <Grid
+                  item
+                  sm={12}
+                  xs={12}
+                  className='app-grid-item-no-padding'
+                >
+                  <Grid
+                    container
+                    direction='row'
+                    spacing={1}
+                  >
+                    <Grid
+                      item
+                      sm={4}
+                      xs={6}
+                    >
+                      <Button
+                        variant='contained'
+                        onClick={this.addCourse}
+                        className='app-button'
+                        fullWidth
+                      >
+                        Add Course
+                    </Button>
+                    </Grid>
+                    <Grid
+                      item
+                      sm={8}
+                      xs={6}
+                    >
+                      <Button
+                        variant='contained'
+                        onClick={this.calculate}
+                        className={this.state.courses.length === 0 ? '' : 'app-button'}
+                        disabled={this.state.courses.length === 0}
+                        fullWidth
+                      >
+                        Calculate
+                      </Button>
+                    </Grid>
+                  </Grid>
+                </Grid>
+              </Fragment>
+          }
         </Grid>
       </Paper>
     )
   }
 }
-
-/*
-<Button
-              variant='contained'
-              onClick={this.calculate}
-              className='app-button'
-              style={{ marginTop: '8px' }}
-              fullWidth
-            >
-              Calculate
-            </Button>*/

@@ -8,7 +8,8 @@
 }
 
 .calculator-overall-courses {
-  height: 284px;
+  height: 232px;
+  margin-top: 8px;
   width: 100% !important;
   text-align: center;
   flex-wrap: nowrap !important;
