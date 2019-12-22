@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Card, Typography } from '@material-ui/core';
+import { Grid, Card, Typography, Paper } from '@material-ui/core';
 import { UniversityProps } from '../../interfaces/UniversityInterfaces';
 import './University.css';
 
@@ -15,7 +15,10 @@ export default function University(props: UniversityProps) {
         justify='center'
         spacing={2}
       >
-        <Card className='university-paper'>
+        <Paper 
+          className='university-paper'
+          elevation={4}  
+        >
           {
             university.image === '' ?
               <Grid
@@ -31,11 +34,10 @@ export default function University(props: UniversityProps) {
                   <strong>{university.name}</strong>
                 </Typography>
               </Grid>
-
               :
               <img src={university.image} />
           }
-        </Card>
+        </Paper>
       </Grid>
     </Grid>
   );

@@ -140,7 +140,7 @@ export default class OverallCalculator extends React.Component<BaseCalculatorPro
         direction='column'
       >
         <Grid item>
-          <Paper className='app-text-blue-white'>
+          <Paper className='app-text-secondary'>
             <Grid
               container
               direction='row'
