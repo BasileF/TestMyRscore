@@ -1,0 +1,36 @@
+.calculator-single-paper {
+  width: 90%;
+  padding: 10px;
+}
+
+.calculator-common-result {
+  text-align: center;
+}
+
+.calculator-overall-courses {
+  height: 284px;
+  width: 100% !important;
+  text-align: center;
+  flex-wrap: nowrap !important;
+  overflow: auto;
+}
+
+.calculator-overall-course {
+  padding: 8px 0px 8px 0px;
+}
+
+.calculator-overall-course:hover {
+  background-color: lightgray;
+}
+
+.calculator-overall-course-remove {
+  float: right;
+  width: 17px !important;
+  height: 17px !important;
+  padding-right: 12px;
+}
+
+.calculator-overall-course-remove:hover {
+  color: red;
+  cursor: pointer;
+}

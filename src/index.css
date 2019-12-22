@@ -1,13 +1,52 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+html {
+  background: url('./background.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  margin: 0px;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+.app-button {
+  color: white !important;
+  background-color: #1e5469 !important;
+}
+
+.app-grid-item {
+  width: 100%;
+  padding: 3%;
+}
+
+.app-grid-item-no-padding {
+  width: 100%;
+}
+
+.app-text {
+  text-shadow: 0px 1px 2px darkslategray;
+  color: rgb(54, 54, 54);
+}
+
+.app-text-blue-white {
+  color: white !important;
+  background-color: #1e5469 !important;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 500;
+  line-height: 1.75;
+  white-space: normal;
+  letter-spacing: 0.02857em;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  padding: 6px 0px 6px 0px;
+  text-align: center;
 }

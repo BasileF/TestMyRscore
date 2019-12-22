@@ -1,24 +1,60 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Header, { PrimarySearchAppBar } from './components/Header';
+import SwipeableViews from 'react-swipeable-views';
+import OverallCalculator from './components/calculator/OverallCalculator';
+import SingleCalculator from './components/calculator/SingleCalculator';
+import Welcome from './components/Welcome';
+import { Grid, Paper } from '@material-ui/core';
 
-const App: React.FC = () => {
+function App() {
+  const [activeTab, setActiveTab] = React.useState(0);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+      <PrimarySearchAppBar
+        activeTab={activeTab}
+        setActiveTab={setActiveTab}
+      />
+      <SwipeableViews index={activeTab}>
+        <Grid
+          container
+          direction='row'
+          justify='center'
+          alignItems='center'
+          style={{ minHeight: '100vh', paddingTop: '48px' }}
         >
-          Learn React
-        </a>
-      </header>
+          <Grid
+            item
+            sm={6}
+            xs={12}
+            className='app-grid-item'
+          >
+            <Welcome />
+          </Grid>
+          <Grid
+            item
+            sm={6}
+            xs={12}
+            className='app-grid-item'
+          >
+            <SingleCalculator />
+          </Grid>
+        </Grid>
+        <Grid
+          container
+          direction='row'
+          justify='center'
+          alignItems='center'
+          style={{ minHeight: '100vh', paddingTop: '48px' }}
+        >
+          <OverallCalculator />
+        </Grid>
+        <h1>
+          TEST
+        </h1>
+        <h1>
+          TEST
+        </h1>
+      </SwipeableViews>
     </div>
   );
 }
