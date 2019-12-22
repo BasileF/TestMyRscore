@@ -1,5 +1,5 @@
 import React from 'react';
-import Header, { PrimarySearchAppBar } from './components/Header';
+import Header from './components/Header';
 import SwipeableViews from 'react-swipeable-views';
 import OverallCalculator from './components/calculator/OverallCalculator';
 import SingleCalculator from './components/calculator/SingleCalculator';
@@ -10,7 +10,7 @@ function App() {
   const [activeTab, setActiveTab] = React.useState(0);
   return (
     <div className="App">
-      <PrimarySearchAppBar
+      <Header
         activeTab={activeTab}
         setActiveTab={setActiveTab}
       />

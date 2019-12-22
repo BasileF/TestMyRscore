@@ -1,3 +1,7 @@
 .header {
   background-color: #1e5469 !important;
 }
+
+.header-mobile-menu-text {
+  padding-left: 10px;
+}

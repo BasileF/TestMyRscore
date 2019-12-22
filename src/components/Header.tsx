@@ -13,28 +13,6 @@ import FunctionsIcon from '@material-ui/icons/Functions';
 import SchoolIcon from '@material-ui/icons/School';
 import PhoneIcon from '@material-ui/icons/Phone';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
-export default function Header(props: HeaderProps) {
-  return (
-    <AppBar
-      position='absolute'
-      className='header'
-    >
-      <Toolbar variant='dense'>
-        <Tabs
-          value={props.activeTab}
-          onChange={(e, val) => props.setActiveTab(val)}
-          TabIndicatorProps={{ style: { backgroundColor: 'white', width: '110px' } }}
-        >
-          <Tab label='Home' style={{ minWidth: '110px' }} />
-          <Tab label='Overall' style={{ minWidth: '110px' }} />
-          <Tab label='University' style={{ minWidth: '110px' }} />
-          <Tab label='Contact' style={{ minWidth: '110px' }} />
-        </Tabs>
-      </Toolbar>
-    </AppBar>
-  );
-}
-
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -103,25 +81,14 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export function PrimarySearchAppBar(props: HeaderProps) {
+export default function Header(props: HeaderProps) {
   const classes = useStyles();
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState<null | HTMLElement>(null);
 
-  const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
-
-  const handleProfileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
 
   const handleMobileMenuClose = () => {
     setMobileMoreAnchorEl(null);
-  };
-
-  const handleMenuClose = () => {
-    setAnchorEl(null);
-    handleMobileMenuClose();
   };
 
   const handleMobileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
@@ -139,31 +106,21 @@ export function PrimarySearchAppBar(props: HeaderProps) {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem>
-        <IconButton color="inherit">
-          <HomeIcon />
-        </IconButton>
-        <p>Home</p>
+      <MenuItem onClick={(e) => props.setActiveTab(0)}>
+        <HomeIcon />
+        <p className='header-mobile-menu-text'>Home</p>
       </MenuItem>
-      <MenuItem>
-          <FunctionsIcon />
-        <p>Overall</p>
+      <MenuItem onClick={(e) => props.setActiveTab(1)}>
+        <FunctionsIcon />
+        <p className='header-mobile-menu-text'>Overall</p>
       </MenuItem>
-      <MenuItem>
-        <IconButton
-          color="inherit"
-        >
-          <SchoolIcon />
-        </IconButton>
-        <p>Universities</p>
+      <MenuItem onClick={(e) => props.setActiveTab(2)}>
+        <SchoolIcon />
+        <p className='header-mobile-menu-text'>University</p>
       </MenuItem>
-      <MenuItem>
-        <IconButton
-          color="inherit"
-        >
-          <PhoneIcon />
-        </IconButton>
-        <p>Contact</p>
+      <MenuItem onClick={(e) => props.setActiveTab(3)}>
+        <PhoneIcon />
+        <p className='header-mobile-menu-text'>Contact</p>
       </MenuItem>
     </Menu>
   );
