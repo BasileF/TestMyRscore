@@ -1,0 +1,10 @@
+.university-grid {
+  padding: 3%;
+}
+
+.university-paper {
+  width: 250px;
+  height: 250px;
+  position: relative;
+  text-align: justify;
+}

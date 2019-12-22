@@ -18,9 +18,27 @@ input[type=number]::-webkit-outer-spin-button {
     margin: 0; 
 }
 
+img {
+  max-height: 100%;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
 .app-button {
   color: white !important;
   background-color: #1e5469 !important;
+}
+
+.app-grid-container {
+  min-height: 100vh;
+  padding-top: 48px;
 }
 
 .app-grid-item {
@@ -51,22 +69,18 @@ input[type=number]::-webkit-outer-spin-button {
   text-align: center;
 }
 
-/* width */
 ::-webkit-scrollbar {
   width: 7px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
   background: #f1f1f1; 
 }
  
-/* Handle */
 ::-webkit-scrollbar-thumb {
   background: #888; 
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555; 
 }

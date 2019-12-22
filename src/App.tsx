@@ -4,7 +4,8 @@ import SwipeableViews from 'react-swipeable-views';
 import OverallCalculator from './components/calculator/OverallCalculator';
 import SingleCalculator from './components/calculator/SingleCalculator';
 import Welcome from './components/Welcome';
-import { Grid, Paper } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
+import Universities from './components/university/Universities';
 
 function App() {
   const [activeTab, setActiveTab] = React.useState(0);
@@ -20,7 +21,7 @@ function App() {
           direction='row'
           justify='center'
           alignItems='center'
-          style={{ minHeight: '100vh', paddingTop: '48px' }}
+          className='app-grid-container'
         >
           <Grid
             item
@@ -44,13 +45,19 @@ function App() {
           direction='row'
           justify='center'
           alignItems='center'
-          style={{ minHeight: '100vh', paddingTop: '48px' }}
+          className='app-grid-container'
         >
           <OverallCalculator />
         </Grid>
-        <h1>
-          TEST
-        </h1>
+        <Grid
+          container
+          direction='row'
+          justify='center'
+          alignItems='center'
+          className='app-grid-container'
+        >
+          <Universities />
+        </Grid>
         <h1>
           TEST
         </h1>
