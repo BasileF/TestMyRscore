@@ -83,6 +83,7 @@ export default class OverallCalculator extends React.Component<BaseCalculatorPro
     });
 
     rscore /= credits;
+    rscore = Math.round(rscore * 1000) / 1000;
 
     this.setState({
       rscore: rscore,
