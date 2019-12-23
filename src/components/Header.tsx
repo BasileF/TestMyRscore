@@ -3,8 +3,7 @@ import { AppBar, Toolbar, Tabs, Tab, Button } from '@material-ui/core';
 import { HeaderProps } from '../interfaces/CommonInterfaces';
 import './Header.css'
 
-import { fade, makeStyles, Theme, createStyles } from '@material-ui/core/styles';
-import IconButton from '@material-ui/core/IconButton';
+import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
@@ -28,6 +27,7 @@ const useStyles = makeStyles((theme: Theme) =>
         display: 'block',
       },
       position: 'absolute',
+      cursor: 'pointer'
     },
     sectionDesktop: {
       display: 'none',
@@ -97,7 +97,7 @@ export default function Header(props: HeaderProps) {
         className='header'
       >
         <Toolbar variant='dense'>
-          <Typography className={classes.title} variant="h6" noWrap>
+          <Typography className={classes.title} variant="h6" noWrap onClick={(e) => props.setActiveTab(0)}>
             TMRS
           </Typography>
           <div className={classes.grow} />

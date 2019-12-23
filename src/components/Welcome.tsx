@@ -22,14 +22,14 @@ export default function Welcome() {
         <hr />
         <Typography
           variant='body1'
-          style={{textAlign: 'justify'}}
+          style={{ textAlign: 'justify' }}
         >
           We take pride in helping CEGEP students evaluate their academic standing by providing two simple tools:
-          <ul style={{ textAlign: 'left' }}>
-            <li>RScore Calculator (Single/Overall)</li>
-            <li>University Requirements Calculator</li>
-          </ul>
         </Typography>
+        <ul style={{ textAlign: 'left' }}>
+          <li><Typography variant='body1'>RScore Calculator (Single/Overall)</Typography></li>
+          <li><Typography variant='body1'>University Requirements Calculator</Typography></li>
+        </ul>
       </div>
     </Grid>
   )

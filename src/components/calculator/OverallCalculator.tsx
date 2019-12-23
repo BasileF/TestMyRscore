@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { Button, Paper, Grid, Fade, Typography } from '@material-ui/core';
+import { Button, Paper, Grid, Typography } from '@material-ui/core';
 import InputField from '../common/InputField';
 import { BaseCalculatorProps, BaseCalculatorState, CalculatorCourse } from '../../interfaces/CalculatorInterfaces';
 import Course from './Course';

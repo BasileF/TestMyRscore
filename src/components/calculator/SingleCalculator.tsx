@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Grid, Paper, Fade, Typography } from '@material-ui/core';
+import { Button, Grid, Paper, Fade } from '@material-ui/core';
 import { BaseCalculatorProps, BaseCalculatorState } from '../../interfaces/CalculatorInterfaces';
 import CalculatorResult from './CalculatorResult';
 import InputField from '../common/InputField';

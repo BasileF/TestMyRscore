@@ -28,7 +28,11 @@ img {
 }
 
 a {
+  text-decoration: none;
+}
 
+.app-clickable {
+  cursor: pointer;
 }
 
 .app-button {
