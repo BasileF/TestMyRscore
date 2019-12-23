@@ -1,10 +1,8 @@
 import React from 'react';
-import Header from './components/Header';
+import Header from './components/header/Header';
 import SwipeableViews from 'react-swipeable-views';
-import OverallCalculator from './components/calculator/OverallCalculator';
-import SingleCalculator from './components/calculator/SingleCalculator';
-import Welcome from './components/Welcome';
-import { Grid } from '@material-ui/core';
+import OverallCalculator from './components/calculators/overall/OverallCalculator';
+import Home from './components/home/Home';
 import Universities from './components/university/Universities';
 import Contact from './components/contact/Contact';
 
@@ -17,57 +15,10 @@ function App() {
         setActiveTab={setActiveTab}
       />
       <SwipeableViews index={activeTab}>
-        <Grid
-          container
-          direction='row'
-          justify='center'
-          alignItems='center'
-          className='app-grid-container'
-        >
-          <Grid
-            item
-            sm={6}
-            xs={12}
-            className='app-grid-item'
-          >
-            <Welcome />
-          </Grid>
-          <Grid
-            item
-            sm={6}
-            xs={12}
-            className='app-grid-item'
-          >
-            <SingleCalculator />
-          </Grid>
-        </Grid>
-        <Grid
-          container
-          direction='row'
-          justify='center'
-          alignItems='center'
-          className='app-grid-container'
-        >
-          <OverallCalculator />
-        </Grid>
-        <Grid
-          container
-          direction='row'
-          justify='center'
-          alignItems='center'
-          className='app-grid-container'
-        >
-          <Universities />
-        </Grid>
-        <Grid
-          container
-          direction='column'
-          justify='center'
-          alignItems='center'
-          className='app-grid-container'
-        >
-          <Contact />
-        </Grid>
+        <Home />
+        <OverallCalculator />
+        <Universities />
+        <Contact />
       </SwipeableViews>
     </div>
   );

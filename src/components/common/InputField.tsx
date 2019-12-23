@@ -22,7 +22,7 @@ export default function InputField(props: InputFieldProps) {
           />
         </Grid>
         <Grid item>
-          <Tooltip title={props.tooltip} placement='right'>
+          <Tooltip title={props.tooltip} disableFocusListener placement='right'>
             <HelpOutlinedIcon style={{ verticalAlign: 'super', color: 'black' }} />
           </Tooltip>
         </Grid>

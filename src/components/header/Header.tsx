@@ -1,6 +1,6 @@
 import React from 'react';
 import { AppBar, Toolbar, Tabs, Tab, Button } from '@material-ui/core';
-import { HeaderProps } from '../interfaces/CommonInterfaces';
+import { HeaderProps } from '../../interfaces/CommonInterfaces';
 import './Header.css'
 
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';

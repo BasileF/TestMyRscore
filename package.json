@@ -1,5 +1,6 @@
 {
   "name": "test-my-rscore",
+  "homepage": "https://www.testmyrscore.com/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

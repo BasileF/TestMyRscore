@@ -1,9 +1,9 @@
 import React from 'react';
 import { Button, Grid, Paper, Fade } from '@material-ui/core';
-import { BaseCalculatorProps, BaseCalculatorState } from '../../interfaces/CalculatorInterfaces';
-import CalculatorResult from './CalculatorResult';
-import InputField from '../common/InputField';
-import './Calculator.css';
+import { BaseCalculatorProps, BaseCalculatorState } from '../../../interfaces/CalculatorInterfaces';
+import CalculatorResult from '../common/CalculatorResult';
+import InputField from '../../common/InputField';
+import '../common/Calculator.css';
 
 export default class SingleCalculator extends React.Component<BaseCalculatorProps, BaseCalculatorState> {
   constructor(props: BaseCalculatorProps) {

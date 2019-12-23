@@ -1,5 +1,5 @@
 import React from 'react';
-import { CalculatorCourseProps } from '../../interfaces/CalculatorInterfaces';
+import { CalculatorCourseProps } from '../../../interfaces/CalculatorInterfaces';
 import { Grid } from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Clear';
 

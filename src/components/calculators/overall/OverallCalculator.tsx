@@ -1,9 +1,9 @@
 import React, { Fragment } from 'react';
 import { Button, Paper, Grid, Typography } from '@material-ui/core';
-import InputField from '../common/InputField';
-import { BaseCalculatorProps, BaseCalculatorState, CalculatorCourse } from '../../interfaces/CalculatorInterfaces';
+import InputField from '../../common/InputField';
+import { BaseCalculatorProps, BaseCalculatorState, CalculatorCourse } from '../../../interfaces/CalculatorInterfaces';
 import Course from './Course';
-import CalculatorResult from './CalculatorResult';
+import CalculatorResult from '../common/CalculatorResult';
 
 interface OverallCalculatorState extends BaseCalculatorState {
   credits: string;
@@ -174,133 +174,141 @@ export default class OverallCalculator extends React.Component<BaseCalculatorPro
 
   render() {
     return (
-      <Paper
-        className='calculator-single-paper'
-        elevation={4}
+      <Grid
+        container
+        direction='row'
+        justify='center'
+        alignItems='center'
+        className='app-grid-container'
       >
-        <Grid
-          container
-          direction='row'
-          justify='center'
-          alignItems='center'
-          spacing={1}
+        <Paper
+          className='calculator-single-paper'
+          elevation={4}
         >
-          {
-            this.state.validResult ?
-              <CalculatorResult
-                validResult={this.state.validResult}
-                result={this.state.rscore}
-                onBack={this.onBack}
-              />
-              :
-              <Fragment>
-                <Grid
-                  item
-                  sm={8}
-                  xs={12}
-                  className='app-grid-item-no-padding'
-                >
-                  {this.courses()}
-                </Grid>
-                <Grid
-                  item
-                  sm={4}
-                  xs={12}
-                  className='app-grid-item-no-padding'
-                >
-                  <div>
-                    <InputField
-                      label="Your Grade"
-                      name="grade"
-                      tooltip="Your course grade (0-100)."
-                      value={this.state.grade}
-                      onChange={this.handleChange}
-                      error={this.state.errors[0]}
-                    />
-
-                    <InputField
-                      label="Class Average"
-                      name="average"
-                      tooltip="The class average (0-100)."
-                      value={this.state.average}
-                      onChange={this.handleChange}
-                      error={this.state.errors[1]}
-                    />
-
-                    <InputField
-                      label="Standard Devation"
-                      name="deviation"
-                      tooltip="The standard deviation of the class. This can be found on your course's grade section on Omnivox."
-                      value={this.state.deviation}
-                      onChange={this.handleChange}
-                      error={this.state.errors[2]}
-                    />
-
-                    <InputField
-                      label="Group Strength"
-                      name="strength"
-                      tooltip="This is the group strength of your class. It is best to keep it at 75 if unsure."
-                      value={this.state.strength}
-                      onChange={this.handleChange}
-                      error={this.state.errors[3]}
-                    />
-
-                    <InputField
-                      label="Credits"
-                      name="credits"
-                      tooltip="The amount of credits the course is worth. This can be found on your transcript."
-                      value={this.state.credits}
-                      onChange={this.handleChange}
-                      error={this.state.errors[4]}
-                    />
-                  </div>
-                </Grid>
-                <Grid
-                  item
-                  sm={12}
-                  xs={12}
-                  className='app-grid-item-no-padding'
-                >
+          <Grid
+            container
+            direction='row'
+            justify='center'
+            alignItems='center'
+            spacing={1}
+          >
+            {
+              this.state.validResult ?
+                <CalculatorResult
+                  validResult={this.state.validResult}
+                  result={this.state.rscore}
+                  onBack={this.onBack}
+                />
+                :
+                <Fragment>
                   <Grid
-                    container
-                    direction='row'
-                    spacing={1}
+                    item
+                    sm={8}
+                    xs={12}
+                    className='app-grid-item-no-padding'
+                  >
+                    {this.courses()}
+                  </Grid>
+                  <Grid
+                    item
+                    sm={4}
+                    xs={12}
+                    className='app-grid-item-no-padding'
+                  >
+                    <div>
+                      <InputField
+                        label="Your Grade"
+                        name="grade"
+                        tooltip="Your course grade (0-100)."
+                        value={this.state.grade}
+                        onChange={this.handleChange}
+                        error={this.state.errors[0]}
+                      />
+
+                      <InputField
+                        label="Class Average"
+                        name="average"
+                        tooltip="The class average (0-100)."
+                        value={this.state.average}
+                        onChange={this.handleChange}
+                        error={this.state.errors[1]}
+                      />
+
+                      <InputField
+                        label="Standard Devation"
+                        name="deviation"
+                        tooltip="The standard deviation of the class. This can be found on your course's grade section on Omnivox."
+                        value={this.state.deviation}
+                        onChange={this.handleChange}
+                        error={this.state.errors[2]}
+                      />
+
+                      <InputField
+                        label="Group Strength"
+                        name="strength"
+                        tooltip="This is the group strength of your class. It is best to keep it at 75 if unsure."
+                        value={this.state.strength}
+                        onChange={this.handleChange}
+                        error={this.state.errors[3]}
+                      />
+
+                      <InputField
+                        label="Credits"
+                        name="credits"
+                        tooltip="The amount of credits the course is worth. This can be found on your transcript."
+                        value={this.state.credits}
+                        onChange={this.handleChange}
+                        error={this.state.errors[4]}
+                      />
+                    </div>
+                  </Grid>
+                  <Grid
+                    item
+                    sm={12}
+                    xs={12}
+                    className='app-grid-item-no-padding'
                   >
                     <Grid
-                      item
-                      sm={8}
-                      xs={6}
+                      container
+                      direction='row'
+                      spacing={1}
                     >
-                      <Button
-                        variant='contained'
-                        onClick={this.calculate}
-                        className={this.state.courses.length === 0 ? '' : 'app-button'}
-                        disabled={this.state.courses.length === 0}
-                        fullWidth
+                      <Grid
+                        item
+                        sm={8}
+                        xs={6}
                       >
-                        Calculate
+                        <Button
+                          variant='contained'
+                          onClick={this.calculate}
+                          className={this.state.courses.length === 0 ? '' : 'app-button'}
+                          disabled={this.state.courses.length === 0}
+                          fullWidth
+                        >
+                          Calculate
                       </Button>
-                    </Grid>
-                    <Grid
-                      item
-                      sm={4}
-                      xs={6}
-                    >
-                      <Button
-                        variant='contained'
-                        onClick={this.addCourse}
-                        className='app-button'
-                        fullWidth
+                      </Grid>
+                      <Grid
+                        item
+                        sm={4}
+                        xs={6}
                       >
-                        Add Course
+                        <Button
+                          variant='contained'
+                          onClick={this.addCourse}
+                          className='app-button'
+                          fullWidth
+                        >
+                          Add Course
                     </Button>
+                      </Grid>
                     </Grid>
                   </Grid>
-                </Grid>
-              </Fragment>
-          }
-        </Grid>
-      </Paper>
+                </Fragment>
+            }
+          </Grid>
+        </Paper>
+      </Grid>
     )
   }
 }

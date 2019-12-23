@@ -1,6 +1,6 @@
 import React from 'react';
 import { Fade, Grid, Typography, Button } from '@material-ui/core';
-import { CalculatorResultProps } from '../../interfaces/CalculatorInterfaces';
+import { CalculatorResultProps } from '../../../interfaces/CalculatorInterfaces';
 
 export default function CalculatorResult(props: CalculatorResultProps) {
   return (
