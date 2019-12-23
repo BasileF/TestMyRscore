@@ -158,7 +158,7 @@ export default class OverallCalculator extends React.Component<BaseCalculatorPro
                 className='app-text'
                 variant='body1'
               >
-                Added courses will appear here!
+                Add courses and press calculate to get your overall RScore!
               </Typography>
               :
               courses.map(course =>
@@ -194,6 +194,14 @@ export default class OverallCalculator extends React.Component<BaseCalculatorPro
               />
               :
               <Fragment>
+                <Grid
+                  item
+                  sm={8}
+                  xs={12}
+                  className='app-grid-item-no-padding'
+                >
+                  {this.courses()}
+                </Grid>
                 <Grid
                   item
                   sm={4}
@@ -249,14 +257,6 @@ export default class OverallCalculator extends React.Component<BaseCalculatorPro
                 </Grid>
                 <Grid
                   item
-                  sm={8}
-                  xs={12}
-                  className='app-grid-item-no-padding'
-                >
-                  {this.courses()}
-                </Grid>
-                <Grid
-                  item
                   sm={12}
                   xs={12}
                   className='app-grid-item-no-padding'
@@ -266,20 +266,6 @@ export default class OverallCalculator extends React.Component<BaseCalculatorPro
                     direction='row'
                     spacing={1}
                   >
-                    <Grid
-                      item
-                      sm={4}
-                      xs={6}
-                    >
-                      <Button
-                        variant='contained'
-                        onClick={this.addCourse}
-                        className='app-button'
-                        fullWidth
-                      >
-                        Add Course
-                    </Button>
-                    </Grid>
                     <Grid
                       item
                       sm={8}
@@ -294,6 +280,20 @@ export default class OverallCalculator extends React.Component<BaseCalculatorPro
                       >
                         Calculate
                       </Button>
+                    </Grid>
+                    <Grid
+                      item
+                      sm={4}
+                      xs={6}
+                    >
+                      <Button
+                        variant='contained'
+                        onClick={this.addCourse}
+                        className='app-button'
+                        fullWidth
+                      >
+                        Add Course
+                    </Button>
                     </Grid>
                   </Grid>
                 </Grid>

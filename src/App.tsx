@@ -6,6 +6,7 @@ import SingleCalculator from './components/calculator/SingleCalculator';
 import Welcome from './components/Welcome';
 import { Grid } from '@material-ui/core';
 import Universities from './components/university/Universities';
+import Contact from './components/contact/Contact';
 
 function App() {
   const [activeTab, setActiveTab] = React.useState(0);
@@ -58,9 +59,15 @@ function App() {
         >
           <Universities />
         </Grid>
-        <h1>
-          TEST
-        </h1>
+        <Grid
+          container
+          direction='column'
+          justify='center'
+          alignItems='center'
+          className='app-grid-container'
+        >
+          <Contact />
+        </Grid>
       </SwipeableViews>
     </div>
   );

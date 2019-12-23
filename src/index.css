@@ -27,14 +27,19 @@ img {
   margin: auto;
 }
 
+a {
+
+}
+
 .app-button {
   color: white !important;
-  background-color: #424242 !important;
+  background-color: #0097a7 !important;
 }
 
 .app-grid-container {
   min-height: 100vh;
-  padding-top: 48px;
+  padding-top: 58px;
+  padding-bottom: 10px;
 }
 
 .app-grid-item {
@@ -53,7 +58,7 @@ img {
 
 .app-text-secondary {
   color: white !important;
-  background-color: #424242 !important;
+  background-color: #0097a7 !important;
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-weight: 500;
   line-height: 1.75;

@@ -23,7 +23,7 @@ export default function InputField(props: InputFieldProps) {
         </Grid>
         <Grid item>
           <Tooltip title={props.tooltip} placement='right'>
-            <HelpOutlinedIcon style={{ verticalAlign: 'super', color: '#757575' }} />
+            <HelpOutlinedIcon style={{ verticalAlign: 'super', color: 'black' }} />
           </Tooltip>
         </Grid>
       </Grid>
