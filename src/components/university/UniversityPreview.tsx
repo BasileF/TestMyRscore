@@ -3,7 +3,7 @@ import { Grid, Typography, Paper } from '@material-ui/core';
 import { UniversityProps } from '../../interfaces/UniversityInterfaces';
 import './University.css';
 
-export default function University(props: UniversityProps) {
+export default function UniversityPreview(props: UniversityProps) {
   const university = props.university;
   return (
     <Grid
