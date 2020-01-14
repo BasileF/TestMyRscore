@@ -7,7 +7,7 @@ export default function InputField(props: InputFieldProps) {
   return (
     <Grid item>
       <Grid container spacing={1} alignItems='flex-end'>
-        <Grid item style={{ width: 'calc(100% - 32px)' }}>
+        <Grid item style={props.tooltip ? { width: 'calc(100% - 32px)' } : {width: '100%'}}>
           <TextField
             label={props.label}
             error={props.error}
@@ -21,11 +21,14 @@ export default function InputField(props: InputFieldProps) {
             style={{ width: '100%' }}
           />
         </Grid>
-        <Grid item>
-          <Tooltip title={props.tooltip} disableFocusListener placement='right'>
-            <HelpOutlinedIcon style={{ verticalAlign: 'super', color: 'black' }} />
-          </Tooltip>
-        </Grid>
+        {
+          props.tooltip &&
+          <Grid item>
+            <Tooltip title={props.tooltip} disableFocusListener placement='right'>
+              <HelpOutlinedIcon style={{ verticalAlign: 'super', color: 'black' }} />
+            </Tooltip>
+          </Grid>
+        }
       </Grid>
     </Grid>
   )

@@ -12,3 +12,13 @@
 .university-paper:hover {
   box-shadow: 0px 2px 20px -1px rgba(0,0,0,0.3), 0px 4px 20px 0px rgba(160, 125, 125, 0.24), 0px 1px 20px 0px rgba(0,0,0,0.24);
 }
+
+.eligibility-back {
+  margin: -10px 0px 0px -10px;
+  padding: 5px 10px 5px 10px;
+}
+
+.eligibility-back:hover {
+  background-color: lightgray;
+  cursor: pointer;
+}

@@ -6,7 +6,7 @@ export interface HeaderProps {
 export interface InputFieldProps {
   label: string;
   name: string;
-  tooltip: string;
+  tooltip?: string;
   value: string;
   error: boolean;
   onChange: (e: any) => void;

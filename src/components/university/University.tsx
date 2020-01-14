@@ -3,7 +3,7 @@ import { Grid, Typography, Paper } from '@material-ui/core';
 import { UniversityProps } from '../../interfaces/UniversityInterfaces';
 import './University.css';
 
-export default function UniversityPreview(props: UniversityProps) {
+export default function University(props: UniversityProps) {
   const university = props.university;
   return (
     <Grid
@@ -17,7 +17,8 @@ export default function UniversityPreview(props: UniversityProps) {
       >
         <Paper 
           className='university-paper app-clickable'
-          elevation={4}  
+          elevation={4}
+          onClick={() => props.onClick(university)}
         >
           {
             university.image === '' ?

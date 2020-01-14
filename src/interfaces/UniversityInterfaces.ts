@@ -1,3 +1,53 @@
+export interface UniversityProps {
+  university: UniversityInfo;
+  onClick: (university: UniversityInfo) => void;
+};
+
+export interface UniversitiesState {
+  eligibilityVisible: boolean;
+  university: UniversityInfo | {};
+}
+
+export interface EligibilityProps {
+  university: UniversityInfo;
+  close: () => void;
+}
+
+export interface EligibilityState {
+  rScore: string;
+  prerequisites: Prerequisites;
+  programs: Program[];
+}
+
+export interface UniversityInfo {
+  name: string;
+  image: string;
+  requirements: Program[];
+};
+
+interface Program {
+  programName: string;
+  degree: string;
+  url: string;
+  rScore: number;
+  preReqs: Prerequisites;
+  additionalInfo: string;
+}
+
+interface Prerequisites {
+  cal1: boolean;
+  cal2: boolean;
+  linear: boolean;
+  mechanics: boolean;
+  waves: boolean;
+  eAndM: boolean;
+  genChem: boolean;
+  chemSol: boolean;
+  bio1: boolean;
+  bio2?: boolean;
+  organic?: boolean;
+}
+
 const noPreReqs: Prerequisites = {
   cal1: false,
   cal2: false,
@@ -327,6 +377,10 @@ const concordiaPrograms: Program[] = [
   }
 ];
 
+const mcGillPrograms: Program[] = [
+
+];
+
 export const universities: UniversityInfo[] = [
   {
     name: 'Concordia University',
@@ -336,46 +390,11 @@ export const universities: UniversityInfo[] = [
   {
     name: 'McGill University',
     image: '/images/universities/mcgill.png',
-    requirements: []
+    requirements: mcGillPrograms
   },
   {
     name: 'More to come...',
     image: '',
     requirements: []
   }
-];
-
-export interface UniversityInfo {
-  name: string;
-  image: string;
-  requirements: Program[];
-};
-
-export interface UniversityProps {
-  university: UniversityInfo;
-};
-
-interface Program {
-  programName: string;
-  degree: string;
-  url: string;
-  rScore: number;
-  preReqs: Prerequisites;
-  additionalInfo: string;
-}
-
-interface Prerequisites {
-  cal1: boolean;
-  cal2: boolean;
-  linear: boolean;
-  mechanics: boolean;
-  waves: boolean;
-  eAndM: boolean;
-  genChem: boolean;
-  chemSol: boolean;
-  bio1: boolean;
-}
-
-const mcGillPrograms: Program[] = [
-
 ];
