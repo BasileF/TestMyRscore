@@ -12,6 +12,6 @@ The following Front End technologies are being utilized:
 * CSS
 * HTML
 #### Back End (Temp):
-There is currently no dedicated backend, although there are possibilities of building one using ExpressJS, NodeJS, Mongoose and MongoDB.
+There is currently no dedicated backend. It is not necessary at this point in time, although there are possibilities of building one using ExpressJS, NodeJS, Mongoose and MongoDB in the future.
 ## Try it out!
-Although TestMyRScore is not entirely complete, you can view the latest source code in this repository and the latest live version at <a href='testmyrscore.com' target='blank'>testmyrscore.com</a>.
+Although TestMyRScore is not entirely complete, you can view the latest source code in this repository and the latest live version at <a href='https://testmyrscore.com/' target='blank'>testmyrscore.com</a>.
