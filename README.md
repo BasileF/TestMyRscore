@@ -1,4 +1,4 @@
-# Test My RScore
+# TestMyRScore
 ## Inspiration
 Every year Quebec students finish their CEGEP degrees with no particular University studies in mind. Additionally many CEGEP students struggle to understand and gauge their RScores and the effect that their RScore has on their academic future. TestMyRScore was built to help CEGEP students with these problems.
 ## What it does
